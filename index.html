@@ -70,6 +70,11 @@
       letter-spacing: 0.04em;
     }
 
+    .badge.green {
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
     section {
       background: var(--card);
       border: 1px solid var(--border);
@@ -97,6 +102,11 @@
       border-radius: 10px;
       padding: 1.25rem;
       margin: 1rem 0;
+    }
+
+    .highlight-box.green {
+      background: var(--green-soft);
+      border-color: rgba(34, 197, 94, 0.35);
     }
 
     .highlight-box strong { color: var(--text); }
@@ -150,6 +160,11 @@
       background: var(--green-soft);
     }
 
+    .option-card.bad {
+      border-color: rgba(239, 68, 68, 0.4);
+      background: rgba(239, 68, 68, 0.06);
+    }
+
     .option-card h3 {
       font-size: 1rem;
       margin-bottom: 0.5rem;
@@ -170,6 +185,8 @@
       color: var(--green);
       margin-bottom: 0.5rem;
     }
+
+    .option-card.bad .tag { color: var(--red); }
 
     .timeline {
       position: relative;
@@ -292,6 +309,12 @@
       color: var(--muted);
     }
 
+    .car-specs span.new {
+      background: var(--green-soft);
+      color: var(--green);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+    }
+
     .honest {
       background: var(--yellow-soft);
       border: 1px solid rgba(234, 179, 8, 0.35);
@@ -342,23 +365,63 @@
       border: 1px solid rgba(239, 68, 68, 0.4);
       background: rgba(239, 68, 68, 0.08);
     }
+
+    .approval-banner {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(59, 130, 246, 0.1));
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
+
+    .approval-banner h3 {
+      color: var(--green);
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .approval-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .approval-stat .label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    .approval-stat .value { font-size: 1.4rem; font-weight: 800; color: var(--text); }
+    .approval-stat .delta { font-size: 0.82rem; color: var(--green); margin-top: 0.15rem; }
   </style>
 </head>
 <body>
   <div class="wrap">
 
     <header>
-      <span class="badge">Proposta familiar</span>
-      <h1>Empréstimo de R$ 5.000 — Entrada do Carro</h1>
-      <p class="sub">Planejamento financeiro completo para mostrar como o dinheiro será usado, como vou pagar e por que faz sentido para mim e para você.</p>
+      <span class="badge green">Aprovação confirmada · jun/2026</span>
+      <h1>Empréstimo para Entrada do Carro</h1>
+      <p class="sub">Planejamento financeiro completo — como o dinheiro será usado, como vou pagar e por que faz sentido para mim e para você.</p>
     </header>
+
+    <div class="approval-banner">
+      <h3>✅ Financiamento aprovado</h3>
+      <div class="approval-stats">
+        <div class="approval-stat">
+          <div class="label">Entrada</div>
+          <div class="value">R$ 8.648</div>
+        </div>
+        <div class="approval-stat">
+          <div class="label">Parcela</div>
+          <div class="value">48× R$ 900,09</div>
+        </div>
+      </div>
+    </div>
 
     <!-- RESUMO -->
     <section>
       <h2><span class="icon">📋</span> O pedido em uma frase</h2>
       <div class="highlight-box">
-        <strong>Preciso de R$ 5.000 para a entrada de um carro que substitui o Uber no trabalho.</strong>
-        <p style="margin-top:0.5rem;margin-bottom:0;">Começo a te pagar <strong>a partir de julho/2026</strong> — você escolhe o dia <strong>7</strong> ou <strong>25</strong> de cada mês. Forma: <strong>5× de R$ 1.000</strong>. Sem juros — é empréstimo de irmão, não de banco.</p>
+        <strong>Preciso da sua ajuda para cobrir a entrada de R$ 8.648 de um carro que substitui o Uber no trabalho.</strong>
+        <p style="margin-top:0.5rem;margin-bottom:0;">Começo a te pagar <strong>a partir de julho/2026</strong> — você escolhe o dia <strong>7</strong> ou <strong>25</strong> de cada mês. Forma: <strong>R$ 500/mês</strong> até quitar os R$ 8.648 (~18 parcelas). Sem juros — é empréstimo de irmão, não de banco.</p>
       </div>
     </section>
 
@@ -389,7 +452,7 @@
       </div>
 
       <div class="highlight-box">
-        Com <strong>10 dias de Uber no mês</strong> já gasto <strong>R$ 1.000</strong> — quase o valor da <strong>parcela do carro (R$ 1.480)</strong>. E isso é só trabalho. Nos finais de semana ainda saio para <strong>parques, shoppings e etc.</strong>, que vira mais Uber em cima. O carro resolve trabalho <em>e</em> lazer num pacote só.
+        Com <strong>10 dias de Uber no mês</strong> já gasto <strong>R$ 1.000</strong> — mais que a <strong>parcela do carro (R$ 900)</strong>. E isso é só trabalho. Nos finais de semana ainda saio para <strong>parques, shoppings e etc.</strong>, que vira mais Uber em cima. O carro resolve trabalho <em>e</em> lazer num pacote só.
       </div>
 
       <div class="compare">
@@ -400,9 +463,9 @@
         </div>
         <div class="vs">VS</div>
         <div class="compare-box good">
-          <div class="label">Carro + caronas</div>
-          <div class="num">R$ 1.854</div>
-          <div class="label" style="margin-top:0.5rem;">custo líquido/mês no meu bolso</div>
+          <div class="label">Carro + caronas (custo líquido)</div>
+          <div class="num">R$ 1.274</div>
+          <div class="label" style="margin-top:0.5rem;">parcela + IPVA + pedágio − caronas</div>
         </div>
       </div>
 
@@ -417,7 +480,8 @@
       <div class="car-specs">
         <span>Renault Sandero 1.6 2010</span>
         <span>Bejar Veículos — Indaiatuba</span>
-        <span>36x R$ 1.480</span>
+        <span class="new">48× R$ 900,09</span>
+        <span class="new">Entrada R$ 8.648</span>
         <span>~200 mil km</span>
       </div>
     </section>
@@ -433,14 +497,16 @@
           <tr><td>Salário fixo (líquido)</td><td>R$ 7.000</td></tr>
           <tr><td>Comissão (varia — não conto no básico)</td><td>R$ 1.000 a R$ 4.000</td></tr>
           <tr><td>Poupança / reserva de emergência</td><td>R$ 6.000</td></tr>
+          <tr><td>Fatura do cartão (hoje)</td><td>R$ 800/mês</td></tr>
         </tbody>
       </table>
-      <p style="margin-top:1rem;">A comissão é variável, mas nos últimos meses costuma entrar. Uso ela para cobrir o que o fixo não fecha nos meses em que pago a entrada.</p>
+      <p style="margin-top:1rem;">Com a parcela de R$ 900, o salário fixo cobre <strong>todo o mês</strong> — incluindo você, o carro e o cartão. A comissão vira margem extra, não sobrevivência.</p>
     </section>
 
     <!-- GASTOS MENSAIS -->
     <section>
-      <h2><span class="icon">📊</span> Orçamento mensal com o carro (cenário real)</h2>
+      <h2><span class="icon">📊</span> Orçamento mensal oficial (cenário completo)</h2>
+      <p>Inclui tudo: vida, cartão, carro, pagamento pra você e IPVA. Meses 6 e 7 são os mais pesados — e mesmo assim o fixo fecha.</p>
 
       <table>
         <thead>
@@ -457,37 +523,36 @@
 
       <table style="margin-top:1.25rem;">
         <thead>
+          <tr><th>Compromissos financeiros</th><th>Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Fatura do cartão</td><td>R$ 800</td></tr>
+          <tr><td>Parcela do financiamento (48×)</td><td>R$ 900</td></tr>
+          <tr><td>Parcela pra você</td><td>R$ 500</td></tr>
+        </tbody>
+      </table>
+
+      <table style="margin-top:1.25rem;">
+        <thead>
           <tr><th>Carro (detalhado)</th><th>Valor</th></tr>
         </thead>
         <tbody>
-          <tr><td>Parcela do financiamento</td><td>R$ 1.480</td></tr>
           <tr><td>IPVA + licenciamento (guardado por mês)</td><td>R$ 200</td></tr>
-          <tr><td>Gasolina (trajeto trabalho)</td><td>R$ 420</td></tr>
           <tr><td>Pedágio Ponto a Ponto (R$ 7/dia × 22 dias)</td><td>R$ 154</td></tr>
-          <tr><td><em>Subtotal carro</em></td><td><em>R$ 2.254</em></td></tr>
-          <tr class="positive"><td>Caronas (2 × R$ 200)</td><td>− R$ 400</td></tr>
-          <tr class="total"><td><strong>Custo líquido do carro</strong></td><td><strong>R$ 1.854</strong></td></tr>
+          <tr><td>Gasolina líquida (após caronas de R$ 400 + lucro R$ 80)</td><td>− R$ 80</td></tr>
         </tbody>
       </table>
 
       <table style="margin-top:1.25rem;">
         <tbody>
-          <tr class="total"><td><strong>Total de gastos no mês</strong></td><td><strong>R$ 6.364</strong></td></tr>
+          <tr class="total"><td><strong>Total de gastos no mês</strong></td><td><strong>R$ 6.984</strong></td></tr>
           <tr class="total"><td><strong>Salário fixo</strong></td><td><strong>R$ 7.000</strong></td></tr>
-          <tr class="positive"><td><strong>Sobra no fixo (sem comissão)</strong></td><td><strong>+ R$ 636</strong></td></tr>
+          <tr class="positive"><td><strong>Sobra no fixo (sem comissão)</strong></td><td><strong>+ R$ 16</strong></td></tr>
         </tbody>
       </table>
 
-      <table style="margin-top:1.25rem;">
-        <tbody>
-          <tr><td>Parcela pra você (durante os 5 meses)</td><td>R$ 1.000</td></tr>
-          <tr class="total"><td><strong>Total com a entrada</strong></td><td><strong>R$ 7.364</strong></td></tr>
-          <tr class="negative"><td><strong>Diferença no fixo (sem comissão)</strong></td><td><strong>− R$ 364</strong></td></tr>
-        </tbody>
-      </table>
-
-      <div class="highlight-box" style="margin-top:1rem;">
-        Sem a parcela da entrada, o fixo já fecha com <strong>R$ 636 de folga</strong>. Nos 5 meses em que te pago R$ 1.000, falta <strong>R$ 364</strong> — coberto fácil pela comissão ou pela <strong>poupança de R$ 6.000</strong>.
+      <div class="highlight-box green" style="margin-top:1rem;">
+        <strong>Diagnóstico:</strong> o fixo se paga sozinho. Não dependo de comissão nem da poupança de R$ 6.000 para fechar o mês — incluindo parcela do carro, cartão e pagamento pra você.
       </div>
     </section>
 
@@ -497,18 +562,18 @@
       <div class="timeline">
         <div class="timeline-item done">
           <h4>Junho/2026 — Montagem</h4>
-          <p>Carro na rua, caronas ativas (R$ 400/mês). Orçamento fecha no fixo com R$ 636 de folga — sem parcela sua ainda.</p>
+          <p>Carro na rua, caronas ativas (R$ 400/mês). Parcela de R$ 900 já entra no orçamento.</p>
         </div>
         <div class="timeline-item warn">
-          <h4>Jul a nov/2026 — Pagamento da entrada</h4>
-          <p>R$ 1.000/mês por 5 meses no dia 7 ou 25 (última parcela em nov/2026).</p>
+          <h4>Jul/2026 a dez/2027 — Pagamento da entrada</h4>
+          <p>R$ 500/mês no dia 7 ou 25 — ~18 parcelas até quitar os R$ 8.648. Fixo cobre tudo, inclusive cartão de R$ 800.</p>
         </div>
         <div class="timeline-item done">
-          <h4>Dez/2026 em diante — Quitado</h4>
-          <p>Empréstimo pago. Sobra fixa de ~R$ 636/mês sem comissão — só custos de vida + carro.</p>
+          <h4>Após quitar você — Folga permanente</h4>
+          <p>Sem parcela sua, sobram R$ 516/mês só no fixo (R$ 7.000 − R$ 6.484) — antes de qualquer comissão.</p>
         </div>
         <div class="timeline-item done">
-          <h4>Financiamento do carro (36 meses)</h4>
+          <h4>Financiamento do carro (48 meses)</h4>
           <p>Nos meses de comissão alta (R$ 3k–4k), amortizo parcelas de trás para frente e encurto o contrato. O carro também pode ser vendido se necessário — não é dívida eterna.</p>
         </div>
       </div>
@@ -520,7 +585,11 @@
       <div class="guarantees">
         <div class="guarantee">
           <strong>R$ 6.000 na poupança</strong>
-          Reserva para emergência e para não te deixar na mão se um mês vier ruim.
+          Reserva intacta — não mexo para consumo. Segurança se um mês vier ruim.
+        </div>
+        <div class="guarantee">
+          <strong>Fixo cobre tudo</strong>
+          Salário de R$ 7.000 paga R$ 6.984 de gastos totais — sobram R$ 16 sem comissão.
         </div>
         <div class="guarantee">
           <strong>Carro como patrimônio</strong>
@@ -528,7 +597,7 @@
         </div>
         <div class="guarantee">
           <strong>Caronas fixas</strong>
-          Duas pessoas me ajudam com R$ 200/mês cada (R$ 400 total). Cobre boa parte da gasolina e pedágio.
+          Duas pessoas me ajudam com R$ 200/mês cada (R$ 400 total). Cobre gasolina e ainda sobra.
         </div>
         <div class="guarantee">
           <strong>Você fica livre</strong>
@@ -539,34 +608,37 @@
           Prefiro te pagar do que pagar juros de banco ou cartão. Você me ajuda, eu te devolvo com compromisso.
         </div>
         <div class="guarantee">
-          <strong>Orçamento fecha no fixo</strong>
-          Sem a parcela da entrada, sobram R$ 636/mês — a conta fecha mesmo sem comissão.
+          <strong>Parcela de R$ 900/mês</strong>
+          Financiamento em 48× — cabe no orçamento junto com o pagamento pra você.
         </div>
         <div class="guarantee">
-          <strong>Comissão recorrente</strong>
-          Não dependo só do fixo. Meses bons pagam a entrada e ainda sobra.
+          <strong>Comissão = extra</strong>
+          Não dependo dela para sobreviver. Meses bons aceleram o pagamento pra você.
         </div>
       </div>
     </section>
 
     <!-- CRONOGRAMA -->
     <section>
-      <h2><span class="icon">📅</span> Cronograma das parcelas</h2>
-      <p>Escolha o dia fixo — <strong>7</strong> ou <strong>25</strong> — e mantenho em todos os meses.</p>
+      <h2><span class="icon">📅</span> Cronograma das parcelas pra você</h2>
+      <p>Escolha o dia fixo — <strong>7</strong> ou <strong>25</strong> — e mantenho em todos os meses. Valor de <strong>R$ 500/mês</strong> até completar R$ 8.648.</p>
       <table>
         <thead>
           <tr><th>Parcela</th><th>Se dia 7</th><th>Se dia 25</th><th>Valor</th></tr>
         </thead>
         <tbody>
-          <tr><td>1ª</td><td>07/07/2026</td><td>25/07/2026</td><td>R$ 1.000</td></tr>
-          <tr><td>2ª</td><td>07/08/2026</td><td>25/08/2026</td><td>R$ 1.000</td></tr>
-          <tr><td>3ª</td><td>07/09/2026</td><td>25/09/2026</td><td>R$ 1.000</td></tr>
-          <tr><td>4ª</td><td>07/10/2026</td><td>25/10/2026</td><td>R$ 1.000</td></tr>
-          <tr><td>5ª</td><td>07/11/2026</td><td>25/11/2026</td><td>R$ 1.000</td></tr>
-          <tr class="total"><td colspan="3"><strong>Total</strong></td><td><strong>R$ 5.000</strong></td></tr>
+          <tr><td>1ª</td><td>07/07/2026</td><td>25/07/2026</td><td>R$ 500</td></tr>
+          <tr><td>2ª</td><td>07/08/2026</td><td>25/08/2026</td><td>R$ 500</td></tr>
+          <tr><td>3ª</td><td>07/09/2026</td><td>25/09/2026</td><td>R$ 500</td></tr>
+          <tr><td>4ª</td><td>07/10/2026</td><td>25/10/2026</td><td>R$ 500</td></tr>
+          <tr><td>5ª</td><td>07/11/2026</td><td>25/11/2026</td><td>R$ 500</td></tr>
+          <tr><td>6ª</td><td>07/12/2026</td><td>25/12/2026</td><td>R$ 500</td></tr>
+          <tr><td>7ª a 17ª</td><td>Jan a nov/2027</td><td>Jan a nov/2027</td><td>R$ 500</td></tr>
+          <tr><td>18ª (última)</td><td>07/12/2027</td><td>25/12/2027</td><td>R$ 148</td></tr>
+          <tr class="total"><td colspan="3"><strong>Total</strong></td><td><strong>R$ 8.648</strong></td></tr>
         </tbody>
       </table>
-      <p style="font-size:0.82rem;margin-top:0.75rem;">Nos meses de pagamento, o fixo precisa de ~R$ 364 de comissão para fechar — valor baixo e dentro do que costumo receber.</p>
+      <p style="font-size:0.82rem;margin-top:0.75rem;">Cada parcela de R$ 500 entra no orçamento que já fecha no fixo de R$ 7.000 — sem precisar de comissão.</p>
     </section>
 
     <!-- FECHAMENTO -->
@@ -574,24 +646,26 @@
       <h2><span class="icon">✅</span> Resumo para decidir</h2>
       <table>
         <tbody>
-          <tr><td>Valor pedido</td><td><strong>R$ 5.000</strong></td></tr>
+          <tr><td>Valor pedido</td><td><strong>R$ 8.648</strong> (entrada do carro)</td></tr>
+          <tr><td>Financiamento aprovado</td><td><strong>48× R$ 900,09</strong></td></tr>
           <tr><td>Para quê</td><td>Entrada do Sandero 1.6 (trabalho Indaiatuba → Campinas)</td></tr>
           <tr><td>Quando começo a pagar</td><td>Julho/2026 — dia <strong>7</strong> ou <strong>25</strong></td></tr>
-          <tr><td>Forma de pagamento</td><td>5× R$ 1.000</td></tr>
+          <tr><td>Forma de pagamento</td><td>17× R$ 500 + última de R$ 148 (18 parcelas)</td></tr>
           <tr><td>Juros</td><td>Nenhum</td></tr>
           <tr><td>Minha reserva hoje</td><td>R$ 6.000 (não mexo para consumo)</td></tr>
+          <tr><td>Orçamento mensal total</td><td>R$ 6.984 — fixo de R$ 7.000 cobre tudo</td></tr>
           <tr><td>Caronas</td><td>R$ 200 de cada (R$ 400/mês)</td></tr>
           <tr><td>Benefício pra você</td><td>Sem mais 3 pessoas na sua carona</td></tr>
         </tbody>
       </table>
 
-      <div class="highlight-box" style="margin-top:1.25rem;text-align:center;">
-        <p style="color:var(--text);font-size:1.05rem;margin:0;"><strong>Fiz a conta antes de pedir.</strong> Não é impulso — com 10 dias de Uber já gasto quase a parcela do carro, fora os finais de semana. O carro me dá independência, te tira dessa obrigação de carona e eu te devolvo os R$ 5.000 em 5 parcelas a partir de julho, sem juros.</p>
+      <div class="highlight-box green" style="margin-top:1.25rem;text-align:center;">
+        <p style="color:var(--text);font-size:1.05rem;margin:0;"><strong>Fiz a conta antes de pedir.</strong> Com R$ 500/mês pra você, meu salário fixo fecha o mês inteiro sozinho — carro, cartão e vida. Não é impulso: é planejamento com números que batem.</p>
       </div>
     </section>
 
     <p class="footer-note">
-      Documento preparado em junho/2026 · Valores baseados no orçamento real e no trajeto Indaiatuba ↔ Campinas (SP-075)
+      Documento atualizado em junho/2026 · Aprovação: entrada R$ 8.648 + 48× R$ 900,09 · Trajeto Indaiatuba ↔ Campinas (SP-075)
     </p>
 
   </div>
